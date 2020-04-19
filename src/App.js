@@ -5,7 +5,15 @@ const MyData = { Name: "ALi Haider", Age: 25, Company: "BizIntel" };
 
 export default class App extends Component {
   ShowAlert = () => {
-    alert("I am ali");
+    this.setState({
+      Name: "Jaffar",
+    });
+  };
+
+  state = {
+    Name: "ALi Haider",
+    Age: 25,
+    Company: "BizIntel",
   };
 
   render() {
@@ -16,7 +24,7 @@ export default class App extends Component {
         <BlueBox
           MyFunction={() => this.ShowAlert()}
           Title={"Jaffar"}
-          data={MyData}
+          data={this.state}
         />
       </React.Fragment>
     );
