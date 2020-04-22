@@ -11,10 +11,6 @@ export class Box extends Component {
 export class BlueBox extends Component {
   constructor(props) {
     super(props);
-
-    setInterval(() => {
-      console.log(props.data);
-    }, 1000);
   }
 
   render() {
