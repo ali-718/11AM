@@ -56,6 +56,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./screens/Home";
 import About from "./screens/About";
 import Test from "./screens/Test";
+import Profile from "./screens/Profile";
+import ErrorPage from "./screens/Error";
+import "./config";
 
 export default class App extends Component {
   render() {
@@ -65,6 +68,8 @@ export default class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route path="/about/test" component={Test} />
+          <Route path="/user/:username" component={Profile} />
+          <Route component={ErrorPage} />
         </Switch>
       </Router>
     );
