@@ -13,14 +13,12 @@ export default class Home extends Component {
     //   Name: "Asad",
     //   Age: 21,
     // });
-
     // Remove Data
     // f.database().ref("users").child("-M5cJ-lFQ5M4G2N26w3G").remove();
-
     // Update Data
-    f.database().ref("users").child("-M5cJ1TB-Re5uE42tTeT").update({
-      Age: 25,
-    });
+    // f.database().ref("users").child("-M5cJ1TB-Re5uE42tTeT").update({
+    //   Age: 25,
+    // });
   }
 
   render() {
