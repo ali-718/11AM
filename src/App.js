@@ -70,7 +70,7 @@ export default class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/users" component={Users} />
           <Route path="/about/test" component={Test} />
-          <Route path="/user/:username" component={Profile} />
+          <Route path="/update/:name/:Age/:Id" component={Profile} />
           <Route component={ErrorPage} />
         </Switch>
       </Router>
