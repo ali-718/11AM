@@ -60,6 +60,8 @@ import Profile from "./screens/Profile";
 import ErrorPage from "./screens/Error";
 import "./config";
 import Users from "./screens/Users";
+import Signup from "./screens/Signup";
+import Signin from "./screens/Signin";
 
 export default class App extends Component {
   render() {
@@ -67,6 +69,8 @@ export default class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Signin} />
           <Route exact path="/about" component={About} />
           <Route exact path="/users" component={Users} />
           <Route path="/about/test" component={Test} />

@@ -38,6 +38,14 @@ export default class Users extends Component {
       .catch();
   };
 
+  cancel = () => {
+    this.setState({
+      Name: "",
+      Age: "",
+      onUpdate: false,
+    });
+  };
+
   componentDidMount() {
     this.fetchUsers();
   }
@@ -115,6 +123,7 @@ export default class Users extends Component {
               value={this.state.Age}
             />
             <button onClick={() => this.onUpdate()}>update</button>
+            <button onClick={() => this.cancel()}>cancel</button>
           </div>
         ) : null}
 
