@@ -3,29 +3,39 @@ import { Link } from "react-router-dom";
 import * as f from "firebase";
 
 export default class Home extends Component {
+  state = {
+    isUser: false,
+  };
+
   componentWillUnmount() {
     console.log("I am unmounted");
   }
 
   componentDidMount() {
-    // Add Data
-    // f.database().ref("users").push({
-    //   Name: "Asad",
-    //   Age: 21,
-    // });
-    // Remove Data
-    // f.database().ref("users").child("-M5cJ-lFQ5M4G2N26w3G").remove();
-    // Update Data
-    // f.database().ref("users").child("-M5cJ1TB-Re5uE42tTeT").update({
-    //   Age: 25,
-    // });
+    f.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log("user logged in");
+        this.setState({
+          isUser: true,
+        });
+      } else {
+        console.log("user not logged in");
+        this.props.history.push("/login");
+      }
+    });
   }
 
   render() {
     return (
       <div>
-        <h1>Home</h1>
-        <Link to="/about">Go to about page</Link>
+        {this.state.isUser == true ? (
+          <div>
+            <h1>Home</h1>
+            <Link to="/about">Go to about page</Link>
+          </div>
+        ) : (
+          <h1>Loaing</h1>
+        )}
       </div>
     );
   }
