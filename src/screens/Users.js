@@ -98,8 +98,6 @@ export default class Users extends Component {
   render() {
     return (
       <div>
-        {console.log(this.state)}
-
         {this.state.onUpdate == true ? (
           <div>
             <input

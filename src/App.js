@@ -62,22 +62,26 @@ import "./config";
 import Users from "./screens/Users";
 import Signup from "./screens/Signup";
 import Signin from "./screens/Signin";
+import { Provider } from "react-redux";
+import store from "./store";
 
 export default class App extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Signin} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/users" component={Users} />
-          <Route path="/about/test" component={Test} />
-          <Route path="/update/:name/:Age/:Id" component={Profile} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Signin} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/users" component={Users} />
+            <Route path="/about/test" component={Test} />
+            <Route path="/update/:name/:Age/:Id" component={Profile} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </Router>
+      </Provider>
     );
   }
 }
